@@ -1,0 +1,43 @@
+<link href="../node_modules/video.js/dist/video-js.css" rel="stylesheet">
+<link href="../src/css/videojs.snapshot.css" rel="stylesheet">
+
+<!--&lt;!&ndash;<script src="resources/node_modules/video.js/dist/video.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="resources/node_modules/videojs-flash/dist/videojs-flash.js"></script>&ndash;&gt;-->
+
+<section>
+    <p>my-player</p>
+    <!-- 实际上, 只要将提示信息外包一个链接到 http://www.adobe.com/go/getflashplayer 浏览器就会在地址栏右侧提示开启Flash插件 -->
+
+    <video
+            id="my-player" data-ng-init="player.onInit()"
+            poster="//vjs.zencdn.net/v/oceans.png"
+            data-setup='{}'>
+
+        <source src="rtmp://live.hkstv.hk.lxdns.com/live/hks" type="rtmp/flv"></source>
+        <!--<source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4"></source>-->
+        <!--<source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm"></source>-->
+        <!--<source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg"></source>-->
+        <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                supports HTML5 video
+            </a>
+        </p>
+    </video>
+    <form>
+        <input type="text" data-ng-model="inputer.sourceUrl">
+        <button type="submit" data-ng-click="inputer.onChangeUrl()">Change Url</button>
+        <button type="submit" data-ng-click="inputer.onClearSnapshots()">Clear Snapshots</button>
+    </form>
+    <div data-ng-repeat="snapshotItem in snapshoter.snapshots"
+         style="cursor: pointer; float: left">
+        <img width="110" height="60"
+             ng-attr-id="{{snapshotItem.imageIndex}}"
+             data-ng-src="{{snapshotItem.imageData}}">
+    </div>
+
+</section>
+<script>
+    videojs.options.flash.swf = "../node_modules/video-js-swf/dist/video-js.swf";
+</script>

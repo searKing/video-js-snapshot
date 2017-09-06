@@ -1,0 +1,24 @@
+{
+  "font-name": "videojs-snapshot",
+  "root-dir": "./node_modules/material-design-icons/",
+  "icons": [{
+    "name": "device-perm",
+    "svg": "action/svg/production/ic_perm_camera_mic_48px.svg"
+  },
+  {
+    "name": "snapshot-start",
+    "svg": "image/svg/production/ic_lens_48px.svg"
+  },
+  {
+    "name": "snapshot-stop",
+    "svg": "av/svg/production/ic_stop_48px.svg"
+  },
+  {
+    "name": "photo-retry",
+    "svg": "av/svg/production/ic_replay_48px.svg"
+  },
+  {
+    "name": "photo-camera",
+    "svg": "image/svg/production/ic_photo_camera_48px.svg"
+  }]
+}
